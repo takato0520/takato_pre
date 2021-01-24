@@ -1,0 +1,92 @@
+//////////////
+//// 変数 //// 
+//////////////
+$font-color: #000000;
+$font-color2: #ffffff;
+$font-color3:#00000038;
+$title-color:#707070;
+$bgc1:#A193861F;
+$bgc2:#A1938689;
+$bgc3: #A193861F;
+$bgc4:#D0C5BA;
+$title-font1:"ヒラギノ明朝 Pro";
+$title-font2:"Zapfino";
+$title-font3:"ヒラギノ角ゴ Pro";
+
+
+//////////////
+//// mixing //// 
+//////////////
+
+
+@mixin pc {
+    @media screen and (min-width: 960px){
+        @content;
+    }
+    
+}
+
+@mixin tab {
+    @media screen and (max-width: 959px){
+        @content;
+    }    
+}
+
+@mixin sp {
+    @media screen and (max-width: 600px){
+        @content;
+    }    
+}
+
+//////////////
+//// 共通 //// 
+//////////////
+
+html {
+    font-size: 62.5%; //10px
+}
+
+.inner {
+    top: 0;
+    left: 0;
+    padding:  20vh 8.4vw 6.5vh;
+    margin:  auto 0;
+    width: 100vw;
+    height: 100%;
+
+    @include sp {
+        padding: 0 6vw;
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    color: $title-color;
+    font-size: 1.8rem;
+    letter-spacing: .2em;
+    line-height: 3;
+
+    @include sp {
+        padding: 60px 0;
+    }
+    
+    
+    
+    &::after {
+        display: inline-block;
+        content:"";
+        border-top: 1px solid #707070;
+        width: 3em;
+        margin-left: 1rem;
+
+    } 
+   
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
